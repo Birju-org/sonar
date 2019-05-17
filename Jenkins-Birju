@@ -1,7 +1,10 @@
 properties([pipelineTriggers([pollSCM('* * * * *')])])
 
 node{
-    checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
+    git branch: '**/pullrequests/**', url: 'https://github.com/Birju-org/sonar.git'
+    
+/*    checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
     doGenerateSubmoduleConfigurations: false, extensions: [], 
     submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Birju-org/sonar.git']]])
+*/
 }
